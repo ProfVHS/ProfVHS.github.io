@@ -37,8 +37,6 @@ export const Skills = () => {
   }, [currentTextIndex, currentText]);
 
   useEffect(() => {
-    console.log("Skills in view", isInView);
-    console.log("text index", currentTextIndex);
     if (isInView) {
       setCurrentText("");
       setCurrentTextIndex(0);
