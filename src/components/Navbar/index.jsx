@@ -11,7 +11,7 @@ export const Navbar = () => {
       </div>
       <div className="header__navbar">
         <a href="">Strona Główna</a>
-        <a href="">Umiejętności</a>
+        <a href="#skills">Umiejętności</a>
         <a href="">Projekty</a>
         <a href="">Kontakt</a>
       </div>

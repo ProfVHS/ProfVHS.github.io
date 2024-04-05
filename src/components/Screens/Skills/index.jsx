@@ -1,4 +1,59 @@
+import { useEffect, useRef, useState } from "react";
+import { GitIcon, HtmlCssIcon, JsIcon, NodeJsIcon, ReactIcon, SassIcon, SocketIoIcon, TsIcon } from "./Icons";
+import { SkillsItems } from "./SkillsItems";
 import "./styles.scss";
+
+import { useInView, AnimatePresence } from "framer-motion";
+
+const text = " Umiejętności";
+const skills = [
+  { name: "git source", element: <GitIcon /> },
+  { name: "JavaScript", element: <JsIcon /> },
+  { name: "TypeScript", element: <TsIcon /> },
+  { name: "React.js", element: <ReactIcon /> },
+  { name: "HTML, css", element: <HtmlCssIcon /> },
+  { name: "Sass", element: <SassIcon /> },
+  { name: "Node.js", element: <NodeJsIcon /> },
+  { name: "Socket.io", element: <SocketIoIcon /> },
+];
+
 export const Skills = () => {
-  return <div className="skills__wrapper">Skills</div>;
+  const [currentText, setCurrentText] = useState("");
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  const container = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    let timeout;
+
+    if (currentTextIndex < text.length) {
+      timeout = setTimeout(() => {
+        setCurrentText((prevText) => prevText + text[currentTextIndex]);
+        setCurrentTextIndex((prevIndex) => prevIndex + 1);
+      }, 125);
+    }
+    return () => clearTimeout(timeout);
+  }, [currentTextIndex, currentText]);
+
+  useEffect(() => {
+    console.log("Skills in view", isInView);
+    console.log("text index", currentTextIndex);
+    if (isInView) {
+      setCurrentText("");
+      setCurrentTextIndex(0);
+    }
+  }, [isInView]);
+  return (
+    <div className="skills__wrapper" id="skills" ref={container}>
+      <span className="skills__title" ref={ref}>
+        {"<h2>"}
+        Moje
+        <span className="skills__title-color">{currentText}</span>
+        {"</h2>"}
+      </span>
+      <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+    </div>
+  );
 };
