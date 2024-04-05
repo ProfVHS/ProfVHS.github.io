@@ -1,12 +1,12 @@
 @import "../../../colors.scss";
 .skills {
+  padding-top: 128px;
+  box-sizing: border-box;
+  height: calc(100% - 50px);
   &__wrapper {
-    height: calc(100% - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 128px;
   }
   &__title {
     font-size: 48px;

@@ -22,7 +22,7 @@ export const Skills = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     let timeout;
@@ -43,15 +43,17 @@ export const Skills = () => {
     }
   }, [isInView]);
   return (
-    <div className="skills__wrapper" id="skills">
-      <span className="skills__title">
-        {"<h2>"}
-        Moje
-        <span className="skills__title-color">{currentText}</span>
-        {"</h2>"}
-      </span>
-      <div className="skills__content" ref={ref}>
-        <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+    <div className="skills">
+      <div className="skills__wrapper" ref={ref}>
+        <span className="skills__title">
+          {"<h2>"}
+          Moje
+          <span className="skills__title-color">{currentText}</span>
+          {"</h2>"}
+        </span>
+        <div className="skills__content">
+          <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+        </div>
       </div>
     </div>
   );

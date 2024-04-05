@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./styles.scss";
 
 import { ProjectsList } from "./ProjectsList";
+import { DetailsModal } from "./DetailsModals";
+import { AnimatePresence } from "framer-motion";
 
 export const Projects = () => {
+  const [modalOpen, setModalOpen] = useState();
   return (
     <div className="projects">
       <span className="projects__title">
@@ -14,9 +17,8 @@ export const Projects = () => {
         {"</h3>"}
       </span>
 
-      <div className="projects__list">
-        <ProjectsList />
-      </div>
+      <ProjectsList setModalOpen={setModalOpen} />
+      <AnimatePresence>{modalOpen ? <DetailsModal {...modalOpen} setModalOpen={() => setModalOpen()} /> : null}</AnimatePresence>
     </div>
   );
 };

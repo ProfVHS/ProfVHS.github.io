@@ -1,11 +1,33 @@
+import { useAnimate, usePresence } from "framer-motion";
 import { GitHubButton } from "./Buttons";
+import { useEffect } from "react";
 
-export const ProjectItem = ({ name, description, logo, screenshot, github, showLink }) => {
+export const ProjectItem = ({ id, name, description, logo, screenshot, github, showLink, setModalOpen }) => {
   const openLink = (link) => {
     window.open(link, "_blank");
   };
+
+  const [scope, animate] = useAnimate();
+  const [isPresence, safeToRemove] = usePresence();
+
+  useEffect(() => {
+    if (isPresence) {
+      const enterAnimation = async () => {
+        animate(scope.current, { opacity: [0, 1], y: [100, 0] }, { duration: 0.6, delay: id * 0.1, type: "spring" });
+      };
+      enterAnimation();
+    } else {
+      const exitAnimation = async () => {
+        animate(scope.current, { opacity: 0, y: 100 }, { duration: 2 });
+        safeToRemove();
+      };
+
+      exitAnimation();
+    }
+  }, [isPresence]);
+
   return (
-    <div className="projects__item">
+    <div className="projects__item" ref={scope}>
       <span className="projects__item__title">
         {logo}
         <span>{name}</span>
@@ -16,7 +38,9 @@ export const ProjectItem = ({ name, description, logo, screenshot, github, showL
       </div>
       <span className="projects__item__description">{description}</span>
       <div className="projects__item__links">
-        <button className="projects__item__button">Szczegóły</button>
+        <button className="projects__item__button" onClick={setModalOpen}>
+          Szczegóły
+        </button>
         <GitHubButton onClick={() => openLink(github)} />
       </div>
     </div>
