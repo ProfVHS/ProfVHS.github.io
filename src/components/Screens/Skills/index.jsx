@@ -21,7 +21,6 @@ export const Skills = () => {
   const [currentText, setCurrentText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-  const container = useRef(null);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -46,14 +45,16 @@ export const Skills = () => {
     }
   }, [isInView]);
   return (
-    <div className="skills__wrapper" id="skills" ref={container}>
-      <span className="skills__title" ref={ref}>
+    <div className="skills__wrapper" id="skills">
+      <span className="skills__title">
         {"<h2>"}
         Moje
         <span className="skills__title-color">{currentText}</span>
         {"</h2>"}
       </span>
-      <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+      <div className="skills__content" ref={ref}>
+        <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+      </div>
     </div>
   );
 };

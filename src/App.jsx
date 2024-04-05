@@ -5,6 +5,7 @@ import rafalrubaj from "./assets/rafal-rubaj.png";
 import { Button } from "./components/Button";
 import { Home } from "./components/Screens/Home";
 import { Skills } from "./components/Screens/Skills";
+import { Projects } from "./components/Screens/Projects";
 //content__side-left
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Home />
         <Skills />
+        <Projects />
       </div>
     </>
   );
