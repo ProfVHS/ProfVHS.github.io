@@ -52,8 +52,7 @@ const projects = [
 
 export const ProjectsList = ({ setModalOpen }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  console.log(isInView);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className="projects__list" ref={ref}>
       <AnimatePresence>

@@ -1,13 +1,17 @@
 import "./App.scss";
 import { Navbar } from "./components/Navbar";
 
-import rafalrubaj from "./assets/rafal-rubaj.png";
-import { Button } from "./components/Button";
 import { Home } from "./components/Screens/Home";
 import { Skills } from "./components/Screens/Skills";
 import { Projects } from "./components/Screens/Projects";
+import { Contact } from "./components/Screens/Contact";
+import { useRef } from "react";
 //content__side-left
 function App() {
+  const homeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
   return (
     <>
       <div className="content">
@@ -15,6 +19,7 @@ function App() {
         <Home />
         <Skills />
         <Projects />
+        <Contact />
       </div>
     </>
   );

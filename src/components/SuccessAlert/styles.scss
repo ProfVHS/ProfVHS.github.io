@@ -1,0 +1,31 @@
+@import "../../colors.scss";
+
+.success-alert {
+  position: fixed;
+
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background-color: $accent-color;
+
+  padding: 8px 20px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    color: rgba($color: #000, $alpha: 0.8);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    stroke: rgba($color: #000, $alpha: 0.6);
+  }
+}
