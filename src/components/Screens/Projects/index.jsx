@@ -6,10 +6,10 @@ import { ProjectsList } from "./ProjectsList";
 import { DetailsModal } from "./DetailsModals";
 import { AnimatePresence } from "framer-motion";
 
-export const Projects = () => {
+export const Projects = ({ projectsRef }) => {
   const [modalOpen, setModalOpen] = useState();
   return (
-    <div className="projects">
+    <div className="projects" ref={projectsRef}>
       <span className="projects__title">
         {"<h3>"}
         Moje

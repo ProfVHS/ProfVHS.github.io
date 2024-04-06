@@ -27,11 +27,17 @@
   &__navbar {
     display: flex;
     gap: 48px;
-    & a {
+    & button {
+      font-family: "Poppins", sans-serif;
       color: #fff;
       text-decoration: none;
       font-size: 16px;
       transition: 0.2s;
+
+      background: none;
+      border: none;
+
+      cursor: pointer;
 
       &:hover {
         color: $accent-color;

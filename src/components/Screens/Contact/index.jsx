@@ -10,7 +10,7 @@ const contacts = [
   { type: "GitHub", value: "ProfVHS", icon: <GithubIcon className="contact__item-icon" />, url: "https://github.com/ProfVHS" },
 ];
 
-export const Contact = () => {
+export const Contact = ({ contactRef }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const copyToClipboard = (text) => {
@@ -30,7 +30,7 @@ export const Contact = () => {
   };
   return (
     <>
-      <div className="contact">
+      <div className="contact" ref={contactRef}>
         <span className="contact__title">
           <span className="contact__title-color">{"<h4>"}</span>
           <span>Kontakt</span>

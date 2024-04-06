@@ -17,7 +17,7 @@ const skills = [
   { name: "Socket.io", element: <SocketIoIcon /> },
 ];
 
-export const Skills = () => {
+export const Skills = ({ skillsRef }) => {
   const [currentText, setCurrentText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
@@ -43,7 +43,7 @@ export const Skills = () => {
     }
   }, [isInView]);
   return (
-    <div className="skills">
+    <div className="skills" ref={skillsRef}>
       <div className="skills__wrapper" ref={ref}>
         <span className="skills__title">
           {"<h2>"}
