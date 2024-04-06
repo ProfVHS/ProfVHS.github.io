@@ -13,7 +13,7 @@ export const ProjectItem = ({ id, name, description, logo, screenshot, github, s
   useEffect(() => {
     if (isPresence) {
       const enterAnimation = async () => {
-        animate(scope.current, { opacity: [0, 1], y: [100, 0] }, { duration: 0.6, delay: id * 0.1, type: "spring" });
+        animate(scope.current, { opacity: [0, 1], y: [100, 0] }, { duration: 0.6, delay: id * 0.15, type: "spring" });
       };
       enterAnimation();
     } else {

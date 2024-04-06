@@ -10,7 +10,7 @@ export const SkillsItems = ({ skills }) => {
   useEffect(() => {
     if (isPresent) {
       const enterAnimation = async () => {
-        await animate(scope.current, { opacity: [0, 1], y: [100, 0], transition: { delayChildren: 0.5 } }, { duration: 0.3 });
+        await animate(scope.current, { opacity: [0, 1], y: [100, 0] }, { duration: 0.3, delay: 0.3 });
       };
       enterAnimation();
     } else {
