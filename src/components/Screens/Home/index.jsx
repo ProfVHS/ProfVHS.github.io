@@ -4,7 +4,7 @@ import rafalrubaj from "../../../assets/rafal-rubaj.png";
 export const Home = ({ homeRef, contactRef }) => {
   return (
     <div className="home__wrapper" ref={homeRef}>
-      <div className="home__side">
+      <div className="home__side left">
         <div className="home__side-left">
           <div className="home__title">
             <span>{"<h1>"}Rafał Rubaj,</span>

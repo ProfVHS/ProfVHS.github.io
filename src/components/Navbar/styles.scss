@@ -46,3 +46,28 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .header {
+    padding: 0 20px;
+    &__logo {
+      &-name {
+        font-size: 14px;
+      }
+    }
+    &__navbar {
+      gap: 24px;
+      & button {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .header {
+    &__navbar {
+      display: none;
+    }
+  }
+}

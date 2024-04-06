@@ -14,7 +14,7 @@ export const Contact = ({ contactRef }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);

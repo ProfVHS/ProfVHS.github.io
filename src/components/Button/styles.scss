@@ -28,3 +28,18 @@
     color: #fff;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .button {
+    font-size: 16px;
+    height: 40px;
+    width: 160px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .button {
+    font-size: 12px;
+    height: 30px;
+    width: 120px;
+  }
+}

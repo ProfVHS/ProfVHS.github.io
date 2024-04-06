@@ -1,31 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Skill } from "./Skill";
-
-import { useAnimate, usePresence } from "framer-motion";
+import { AnimatePresence, useInView } from "framer-motion";
 
 export const SkillsItems = ({ skills }) => {
-  const [isPresent, safeToRemove] = usePresence();
-  const [scope, animate] = useAnimate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
-  useEffect(() => {
-    if (isPresent) {
-      const enterAnimation = async () => {
-        await animate(scope.current, { opacity: [0, 1], y: [100, 0] }, { duration: 0.3, delay: 0.3 });
-      };
-      enterAnimation();
-    } else {
-      const exitAnimation = async () => {
-        await animate(scope.current, { opacity: 0, y: 100, transition: { duration: 1 } });
-        safeToRemove();
-      };
-      exitAnimation();
-    }
-  }, [isPresent]);
   return (
-    <div className="skills__items" ref={scope}>
-      {skills.map((skill) => (
-        <Skill key={skill.name} name={skill.name} element={skill.element} />
-      ))}
+    <div className="skills__items" ref={ref}>
+      <AnimatePresence>{isInView ? skills.map((skill, index) => <Skill key={skill.name} index={index} name={skill.name} element={skill.element} />) : null}</AnimatePresence>
     </div>
   );
 };

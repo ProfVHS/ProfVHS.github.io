@@ -52,7 +52,7 @@ export const Skills = ({ skillsRef }) => {
           {"</h2>"}
         </span>
         <div className="skills__content">
-          <AnimatePresence>{isInView ? <SkillsItems skills={skills} /> : null}</AnimatePresence>
+          <SkillsItems skills={skills} />
         </div>
       </div>
     </div>
