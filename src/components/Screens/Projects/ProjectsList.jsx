@@ -3,8 +3,9 @@ import { ProjectItem } from "./ProjectItem";
 import SecondMindScreenshot from "../../../assets/secondmind-screenshot.png";
 import WeatherAppScreenshot from "../../../assets/weatherapp-screenshot.png";
 import PartyGamesScreenshot from "../../../assets/partygames-screenshot.png";
+import FireChatScreenshot from "../../../assets/firechat-screenshot.png";
 
-import { PartyGamesLogo, SecondMindLogo, WeatherAppLogo } from "./ProjectsLogo";
+import { FireChatLogo, PartyGamesLogo, SecondMindLogo, WeatherAppLogo } from "./ProjectsLogo";
 import { AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -46,6 +47,19 @@ const projects = [
       technologies: ["React.js", "TypeScript", "Sass", "Socket.io", "Express.js", "Node.js"],
       description:
         "PartyGames - aplikacja robiona w grupie dwuosobowej. Ja zajmowałem się front-endem i okazyjnie robiłem coś po stronie serwera. Aplikacja umożliwia grę w przygotowane minigry (w losowej kolejności) przez wideorozmowę. Po stronie serwera używamy Socket.io do przekazywania informacji i komunikacji z serwerem oraz bazy danych SQLite do przechowywania informacji o pokojach oraz graczach. Postawiliśmy na SQLite ponieważ nie potrzebujemy trzymać tych informacji na dłużej niż trwa gra. W front-endzie używamy React.js, TypeScript oraz Sass. Projekt graficzny aplikacji został w pełni stworzony przeze mnie w programie Figma. Animacje w aplikacji są robione w CSS lub przy użyciu biblioteki framer-motion.",
+    },
+  },
+  {
+    name: "FireChat",
+    description: "Prosta aplikacja do czatowania w czasie rzeczywistym. Stworzona przy użyciu Firebase.",
+    logo: <FireChatLogo />,
+    screenshot: FireChatScreenshot,
+    github: "https://github.com/ProfVHS/FireChat",
+    showLink: "https://firechat-247e4.web.app/",
+    details: {
+      technologies: ["React.js", "TypeScript", "Firebase", "Sass"],
+      description:
+        "FireChat - prosta aplikacja do czatowania w czasie rzeczywistym. Stworzona przy użyciu Firebase. Aplikacja posiada możliwość logowania oraz rejestracji, pisania wiadomości z każdym zarejestrowanym użytkownikiem, edycji wyświetlanego nicku oraz zdjęcia profilowego oraz usunięcia konta. Projekt graficzny aplikacji został w pełni stworzony przeze mnie w programie Figma. Animacje w aplikacji są robione w CSS lub przy użyciu biblioteki framer-motion. Aplikacja jest w pełni responsywna i działa na każdym urządzeniu.",
     },
   },
 ];

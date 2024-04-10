@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-import { JsIcon, NodeJsIcon, ReactIcon, SassIcon, SocketIoIcon, TsIcon } from "../Skills/Icons";
+import { FirebaseIcon, JsIcon, NodeJsIcon, ReactIcon, SassIcon, SocketIoIcon, TsIcon } from "../Skills/Icons";
 import { SecondMindLogo } from "./ProjectsLogo";
 import { useAnimate, usePresence, motion } from "framer-motion";
 import { useEffect } from "react";
@@ -13,6 +13,7 @@ const techLogos = [
   { name: "Socket.io", logo: <SocketIoIcon className="projects__modal__content__usedtech-item-icon" /> },
   { name: "Express.js", logo: <span className="projects__modal__content__usedtech-item-icon">E</span> },
   { name: "Node.js", logo: <NodeJsIcon className="projects__modal__content__usedtech-item-icon" /> },
+  { name: "Firebase", logo: <FirebaseIcon className="projects__modal__content__usedtech-item-icon" /> },
 ];
 
 export const DetailsModal = ({ setModalOpen, name, technologies, description, logo }) => {
