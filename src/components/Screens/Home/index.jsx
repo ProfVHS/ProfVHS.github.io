@@ -20,7 +20,6 @@ export const Home = ({ homeRef, contactRef }) => {
                 contactRef.current.scrollIntoView({ behavior: "smooth" });
               }}
             />
-            <Button title={"Pobierz CV"} />
           </div>
         </div>
       </div>
