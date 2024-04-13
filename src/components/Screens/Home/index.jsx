@@ -1,6 +1,6 @@
 import { Button } from "../../Button";
 import "./styles.scss";
-import rafalrubaj from "../../../assets/rafal-rubaj.png";
+import rafalrubaj from "../../../assets/me.jpg";
 export const Home = ({ homeRef, contactRef }) => {
   return (
     <div className="home__wrapper" ref={homeRef}>
