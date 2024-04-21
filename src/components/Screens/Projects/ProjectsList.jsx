@@ -5,14 +5,20 @@ import WeatherAppScreenshot from "../../../assets/weatherapp-screenshot.png";
 import PartyGamesScreenshot from "../../../assets/partygames-screenshot.png";
 import FireChatScreenshot from "../../../assets/firechat-screenshot.png";
 
-import { FireChatLogo, PartyGamesLogo, SecondMindLogo, WeatherAppLogo } from "./ProjectsLogo";
+import {
+  FireChatLogo,
+  PartyGamesLogo,
+  SecondMindLogo,
+  WeatherAppLogo,
+} from "./ProjectsLogo";
 import { AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const projects = [
   {
     name: "Second Mind",
-    description: "Aplikacja do zarządzania zadaniami. Posiada również kategorie oraz funkcję kalendarza.",
+    description:
+      "Aplikacja do zarządzania zadaniami. Posiada również kategorie oraz funkcję kalendarza.",
     logo: <SecondMindLogo />,
     screenshot: SecondMindScreenshot,
     github: "https://github.com/ProfVHS/second-mind",
@@ -25,7 +31,8 @@ const projects = [
   },
   {
     name: "Weather App",
-    description: "Aplikacja do sprawdzania pogody z dynamicznym motywem zależnym od godziny sprawdzanego miasta.",
+    description:
+      "Aplikacja do sprawdzania pogody z dynamicznym motywem zależnym od godziny sprawdzanego miasta.",
     logo: <WeatherAppLogo />,
     screenshot: WeatherAppScreenshot,
     github: "https://github.com/ProfVHS/weather-app",
@@ -38,20 +45,29 @@ const projects = [
   },
   {
     name: "PartyGames (WIP)",
-    description: "Aplikacja robiona w grupie dwuosobowej. Aplikacja do rozgrywania mini-gier przez wideorozmowę. W trakcie tworzenia.",
+    description:
+      "Aplikacja robiona w grupie dwuosobowej. Aplikacja do rozgrywania mini-gier przez wideorozmowę. W trakcie tworzenia.",
     logo: <PartyGamesLogo />,
     screenshot: PartyGamesScreenshot,
     github: "https://github.com/ProfVHS/PartyGames",
-    showLink: "",
+    showLink: "https://partygames-1.onrender.com/",
     details: {
-      technologies: ["React.js", "TypeScript", "Sass", "Socket.io", "Express.js", "Node.js"],
+      technologies: [
+        "React.js",
+        "TypeScript",
+        "Sass",
+        "Socket.io",
+        "Express.js",
+        "Node.js",
+      ],
       description:
         "PartyGames - aplikacja robiona w grupie dwuosobowej. Ja zajmowałem się front-endem i okazyjnie robiłem coś po stronie serwera. Aplikacja umożliwia grę w przygotowane minigry (w losowej kolejności) przez wideorozmowę. Po stronie serwera używamy Socket.io do przekazywania informacji i komunikacji z serwerem oraz bazy danych SQLite do przechowywania informacji o pokojach oraz graczach. Postawiliśmy na SQLite ponieważ nie potrzebujemy trzymać tych informacji na dłużej niż trwa gra. W front-endzie używamy React.js, TypeScript oraz Sass. Projekt graficzny aplikacji został w pełni stworzony przeze mnie w programie Figma. Animacje w aplikacji są robione w CSS lub przy użyciu biblioteki framer-motion.",
     },
   },
   {
     name: "FireChat",
-    description: "Prosta aplikacja do czatowania w czasie rzeczywistym. Stworzona przy użyciu Firebase.",
+    description:
+      "Prosta aplikacja do czatowania w czasie rzeczywistym. Stworzona przy użyciu Firebase.",
     logo: <FireChatLogo />,
     screenshot: FireChatScreenshot,
     github: "https://github.com/ProfVHS/FireChat",
@@ -76,7 +92,14 @@ export const ProjectsList = ({ setModalOpen }) => {
                 key={project.name}
                 id={i}
                 {...project}
-                setModalOpen={() => setModalOpen({ name: project.name, technologies: project.details.technologies, description: project.details.description, logo: project.logo })}
+                setModalOpen={() =>
+                  setModalOpen({
+                    name: project.name,
+                    technologies: project.details.technologies,
+                    description: project.details.description,
+                    logo: project.logo,
+                  })
+                }
               />
             ))
           : null}
